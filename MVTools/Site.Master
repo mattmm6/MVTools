@@ -63,12 +63,14 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Prefs">Prefs</a></li>
                         <li><a runat="server" href="~/Users">Users</a></li>
+                        <li><a runat="server" href="~/Procs">Procedures</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Settings/Config">Config</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

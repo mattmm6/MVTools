@@ -30,9 +30,18 @@ namespace MVTools
         {
             PREFTableAdapter prefTable = new PREFTableAdapter();
             
-            prefGrid.DataSource = prefTable.GetPrefs();
+            if (txtPrefSearch.Text.Length > 1)
+            {
+                prefGrid.DataSource = prefTable.GetPrefByID(txtPrefSearch.Text);
+            }
+            else
+            {
+                prefGrid.DataSource = prefTable.GetPrefs();
+            }
+            
             prefGrid.DataBind();
         }
+        
 
         protected void prefGrid_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
@@ -53,6 +62,21 @@ namespace MVTools
         
 
     
+        }
+
+        protected void txtPrefSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrefSearch.Text.Length > 1)
+            {
+                bindData();
+            }
+
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            txtPrefSearch.Text = "";
+            bindData();
         }
 
   
